@@ -10,6 +10,12 @@ const app = Vue.createApp({
             author: 'Brandon Sanderson',
             age: 45
         }
+    },
+    methods: {
+        changeTitle(title) {
+            this.title = title;
+            // this === 뷰 컴포넌트!
+        }
     }
 })
  
