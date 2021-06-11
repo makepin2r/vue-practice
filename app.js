@@ -6,15 +6,15 @@ const app = Vue.createApp({
     // data
     data() {
         return {
+            showBooks: true,
             title: 'The Final Empire',
             author: 'Brandon Sanderson',
             age: 45
         }
     },
     methods: {
-        changeTitle(title) {
-            this.title = title;
-            // this === 뷰 컴포넌트!
+        toggleShowBooks() {
+            this.showBooks = !this.showBooks;
         }
     }
 })
