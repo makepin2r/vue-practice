@@ -21,6 +21,9 @@
     <h1>:)</h1>
 
     <div id="app">
+        <!-- attribute binding -->
+        <a :href="url">dynamic url!</a> <!-- v-bind:[attribute] === :[attribute] -->
+
         <div v-if="showBooks">
             <ul>
                 <li v-for="book in books">
