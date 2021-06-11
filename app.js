@@ -12,17 +12,20 @@ const app = Vue.createApp({
                 {
                     title: 'The Final Empire',
                     author: 'Brandon Sanderson',
-                    img: 'assets/1.jpg'
+                    img: 'assets/1.jpg',
+                    isFav: false
                 },
                 {
                     title: 'Harry Potter',
                     author: 'J.K Rowling',
-                    img: 'assets/2.jpg'
+                    img: 'assets/2.jpg',
+                    isFav: true
                 },
                 {
                     title: '1Q84',
                     author: 'Haruki Murakami',
-                    img: 'assets/3.jpg'
+                    img: 'assets/3.jpg',
+                    isFav: true
                 },
             ],
             x: 0,

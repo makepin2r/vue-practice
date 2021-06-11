@@ -18,6 +18,9 @@
         .thumbnail {
             width: 100px;
         }
+        li.fav h3:after {
+            content:"💕 ";
+        }
     </style>
 </head>
 <body>
@@ -26,7 +29,8 @@
     <div id="app">
         <div v-if="showBooks">
             <ul>
-                <li v-for="book in books">
+                <li v-for="book in books" :class="{ fav: book.isFav }">
+                    <!-- class binding : 객체 구조 - key: 토글할 클래스명, prop: boolean값 -->
                     <img class="thumbnail" :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
