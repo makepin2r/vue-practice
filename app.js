@@ -7,7 +7,7 @@ const app = Vue.createApp({
     data() {
         return {
             url: 'https://google.com',
-            showBooks: true,
+            showFavBooks: true,
             books: [
                 {
                     title: 'The Final Empire',
@@ -33,8 +33,8 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        toggleShowBooks() {
-            this.showBooks = !this.showBooks;
+        toggleshowFavBooks() {
+            this.showFavBooks = !this.showFavBooks;
         },
         toggleFav(book) {
             book.isFav = !book.isFav;
@@ -42,7 +42,13 @@ const app = Vue.createApp({
     },
     computed: {
         filteredBooks() {
-            return this.books.filter((book) => book.isFav);
+            if(this.showFavBooks) {
+                // Show only favorite books
+                return this.books.filter((book) => book.isFav);
+            } else {
+                // Show all books
+                return this.books;
+            }
         }
     }
 })
