@@ -15,18 +15,19 @@
             margin: 20px;
             display: inline-block;
         }
+        .thumbnail {
+            width: 100px;
+        }
     </style>
 </head>
 <body>
     <h1>:)</h1>
 
     <div id="app">
-        <!-- attribute binding -->
-        <a :href="url">dynamic url!</a> <!-- v-bind:[attribute] === :[attribute] -->
-
         <div v-if="showBooks">
             <ul>
                 <li v-for="book in books">
+                    <img class="thumbnail" :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
                 </li>
