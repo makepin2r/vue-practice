@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Vue</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.0.2"></script>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 200px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <h1>:)</h1>
@@ -20,9 +30,15 @@
             <span v-else>Show Books</span>
         </button>
 
-        <div v-show="showBooks">currently showing books</div> 
-        <!-- v-if, v-else : DOM을 삽입/제거 -->
-        <!-- v-show : display 제어 -->
+        <br>
+        <!-- mouse events -->
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+
+        <!-- 이벤트 함수에 아무 인자도 넘기지 않으면 첫 번째 인자는 자동으로 이벤트 객체가 된다. -->
+        <!-- 이벤트 함수에 커스텀 인자를 넣고 싶으면, 첫 번째 인자(이벤트 객체)로 $event를 명시하고 커스텀 인자를 넣는다. -->
+
     </div>
 
     <script src="app.js"></script>
