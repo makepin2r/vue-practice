@@ -22,7 +22,12 @@
 
     <div id="app">
         <div v-if="showBooks">
-            <p>{{ title }} - {{ author }} - {{ age }}</p>
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                </li>
+            </ul>
         </div>
 
         <button @click="toggleShowBooks">
@@ -36,10 +41,6 @@
         <div class="box" @mouseleave="handleEvent">mouseleave</div>
         <div class="box" @dblclick="handleEvent">double click</div>
         <div class="box" @mousemove="handleMousemove">position - {{x}} {{y}}</div>
-
-        <!-- 이벤트 함수에 아무 인자도 넘기지 않으면 첫 번째 인자는 자동으로 이벤트 객체가 된다. -->
-        <!-- 이벤트 함수에 커스텀 인자를 넣고 싶으면, 첫 번째 인자(이벤트 객체)로 $event를 명시하고 커스텀 인자를 넣는다. -->
-
     </div>
 
     <script src="app.js"></script>
